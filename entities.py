@@ -12,12 +12,13 @@ def spacy_entities(text):
     # Find named entities, phrases and concepts
     entities = []
     for entity in doc.ents:
-        entities.append({
-            "text": entity.text,
-            "label": entity.label_,
-            "start_char": entity.start_char,
-            "end_char": entity.end_char
-        })
+        if entity.text.strip() != '':
+            entities.append({
+                "text": entity.text,
+                "label": entity.label_,
+                "start_char": entity.start_char,
+                "end_char": entity.end_char
+            })
 
     return(entities)
 
