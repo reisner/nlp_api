@@ -23,10 +23,14 @@ Basic NLP analysis using a variety of libraries. Returns Document sentiment, key
 
 Run the flask server:
 
-    nohup python rest_server.py &
+    nohup python rest_server.py >/dev/null 2>&1 &
 
 Query the server:
 
     from requests import put
     host_url = 'URL_HERE'
     put(host_url, data={'text': text}).json()
+
+Or:
+
+    curl -X PUT -d text="hello there i am some text to analyze in Canada. Boy oh boy am I angry." host.url.com
