@@ -1,6 +1,6 @@
 # README #
 
-Basic NLP analysis using a variety of libraries.
+Basic NLP analysis using a variety of libraries. Returns Document sentiment, keywords, and entities.
 
 ### Usage ###
 
