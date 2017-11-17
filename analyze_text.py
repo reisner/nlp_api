@@ -1,18 +1,22 @@
 import entities
+import keywords
 import sentiment
 
 # Given a block of text, return:
 #  sentiment:
 #  entities:
+#  keywords:
 def analyze_text_block(text):
     results = {
       'entities': entities.get_entities(text),
-      'sentiment': sentiment.get_sentiment(text)
+      'sentiment': sentiment.get_sentiment(text),
+      'keywords': keywords.get_keywords(text)
     }
 
     return(results)
 
 
+# Example Run:
 result = analyze_text_block("""
 Edmonton is the capital city of the Canadian province of Alberta. Edmonton is on the North Saskatchewan River and is the centre of the Edmonton Metropolitan Region, which is surrounded by Alberta's central region. The city anchors the north end of what Statistics Canada defines as the "Calgary–Edmonton Corridor".[12]
 

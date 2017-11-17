@@ -21,6 +21,15 @@ def spacy_entities(text):
 
     return(entities)
 
-
 #TODO: Using NLTK:
 #>>> entities = nltk.chunk.ne_chunk(tagged)
+
+
+#TODO: Using Textblob:
+# >>> from textblob import TextBlob
+# >>> from textblob.np_extractors import ConllExtractor
+# >>> extractor = ConllExtractor()
+# >>> blob = TextBlob("Python is a high-level programming language.", np_extractor=extractor)
+# >>> blob.noun_phrases
+
+# https://www.airpair.com/nlp/keyword-extraction-tutorial
