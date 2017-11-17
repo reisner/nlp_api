@@ -1,4 +1,4 @@
-import RAKE
+import RAKE #pip install python-rake
 
 def get_keywords(text, score_minimum = 2.0):
     Rake = RAKE.Rake(RAKE.NLTKStopList())

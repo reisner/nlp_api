@@ -1,11 +1,10 @@
 import spacy
 
-# Requires: "python3 -m spacy download en"
 def get_entities(text):
     return(spacy_entities(text))
 
 def spacy_entities(text):
-    nlp = spacy.load('en')
+    nlp = spacy.load('en') # Requires: "python3 -m spacy download en"
 
     doc = nlp(text)
 
