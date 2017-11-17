@@ -17,3 +17,16 @@ Basic NLP analysis using a variety of libraries. Returns Document sentiment, key
     import analyze_text as at
     result = at.analyze_text_block(text)
     pprint.pprint(result)
+
+
+### Flask REST Server ###
+
+Run the flask server:
+
+    nohup python rest_server.py &
+
+Query the server:
+
+    from requests import put
+    host_url = 'URL_HERE'
+    put(host_url, data={'text': text}).json()
