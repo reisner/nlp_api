@@ -12,8 +12,10 @@ def get_entities(text, library="spacy"):
     else:
         return({'entities error': 'Invalid entities library'})
 
+# REQUIRES:
+# python3 -m spacy download en
 def get_spacy_entities(text):
-    nlp = spacy.load('en') # Requires: "python3 -m spacy download en"
+    nlp = spacy.load('en')
 
     doc = nlp(text)
 
@@ -44,4 +46,9 @@ def get_textblob_entities(text):
 
 
 #TODO: Using NLTK:
-#>>> entities = nltk.chunk.ne_chunk(tagged)
+# import nltk
+# nltk.download('maxent_ne_chunker')
+# nltk.download('averaged_perceptron_tagger')
+# nltk.download('words')
+# nltk.download('maxent_ne_chunker')
+# res = nltk.chunk.ne_chunk(nltk.pos_tag(nltk.word_tokenize(text)))
