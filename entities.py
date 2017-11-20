@@ -1,9 +1,18 @@
 import spacy
+from textblob import TextBlob
+from textblob.np_extractors import ConllExtractor
 
-def get_entities(text):
-    return(spacy_entities(text))
+# Returns a list of hashes. The hashes may differ, but are guaranteed to contain
+# the key "text" for each entity.
+def get_entities(text, library="spacy"):
+    if library == 'spacy':
+        return(get_spacy_entities(text))
+    elif library == 'textblob':
+        return(get_textblob_entities(text))
+    else:
+        return({'entities error': 'Invalid entities library'})
 
-def spacy_entities(text):
+def get_spacy_entities(text):
     nlp = spacy.load('en') # Requires: "python3 -m spacy download en"
 
     doc = nlp(text)
@@ -21,15 +30,18 @@ def spacy_entities(text):
 
     return(entities)
 
+# REQUIRES:
+# import nltk
+# nltk.download('punkt')
+# nltk.download('conll2000')
+def get_textblob_entities(text):
+    extractor = ConllExtractor()
+    blob = TextBlob(text, np_extractor=extractor)
+    entities = []
+    for entity in blob.noun_phrases:
+        entities.append({'text': entity})
+    return(entities)
+
+
 #TODO: Using NLTK:
 #>>> entities = nltk.chunk.ne_chunk(tagged)
-
-
-#TODO: Using Textblob:
-# >>> from textblob import TextBlob
-# >>> from textblob.np_extractors import ConllExtractor
-# >>> extractor = ConllExtractor()
-# >>> blob = TextBlob("Python is a high-level programming language.", np_extractor=extractor)
-# >>> blob.noun_phrases
-
-# https://www.airpair.com/nlp/keyword-extraction-tutorial
