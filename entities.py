@@ -4,7 +4,7 @@ from textblob.np_extractors import ConllExtractor
 
 # Returns a list of hashes. The hashes may differ, but are guaranteed to contain
 # the key "text" for each entity.
-def get_entities(text, library="spacy"):
+def get_entities(text, library = "spacy"):
     if library == 'spacy':
         return(get_spacy_entities(text))
     elif library == 'textblob':

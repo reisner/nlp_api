@@ -1,6 +1,6 @@
 # README #
 
-Basic NLP analysis using a variety of libraries. Returns Document sentiment, keywords, and entities.
+Basic NLP analysis using a variety of libraries. Returns document sentiment, keywords, and entities.
 
 ### Usage ###
 
@@ -17,6 +17,10 @@ Basic NLP analysis using a variety of libraries. Returns Document sentiment, key
     import analyze_text as at
     result = at.analyze_text_block(text)
     pprint.pprint(result)
+
+You can also specify which libraries to use:
+
+    result = at.analyze_text_block(text, sentiment_library = "vader", entity_library = "textblob")
 
 
 ### Flask REST Server ###

@@ -3,7 +3,7 @@ from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer #pip instal
 
 # Returns a hash, that differs based on the library, but is guaranteed to return
 # a value for the key "polarity". This ranges from -1 (negative) to 1 (positive).
-def get_sentiment(text, library="textblob"):
+def get_sentiment(text, library = "textblob"):
     if library == 'textblob':
         return(get_textblob_sentiment(text))
     elif library == 'vader':
