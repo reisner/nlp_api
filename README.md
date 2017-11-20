@@ -4,6 +4,8 @@ Basic NLP analysis using a variety of libraries. Returns document sentiment, key
 
 ### Usage ###
 
+Some input:
+
     text = """
     Edmonton is the capital city of the Canadian province of Alberta. Edmonton is on the North Saskatchewan River and is the centre of the Edmonton Metropolitan Region, which is surrounded by Alberta's central region. The city anchors the north end of what Statistics Canada defines as the "Calgary–Edmonton Corridor".
 
@@ -14,7 +16,10 @@ Basic NLP analysis using a variety of libraries. Returns document sentiment, key
     Edmonton is a cultural, governmental and educational centre. It hosts a year-round slate of festivals, reflected in the nickname "Canada's Festival City". It is home to North America's largest mall, West Edmonton Mall (the world's largest mall from 1981 until 2004), and Fort Edmonton Park, Canada's largest living history museum
     """
 
+Using the code:
+
     import analyze_text as at
+    import pprint
     result = at.analyze_text_block(text)
     pprint.pprint(result)
 
