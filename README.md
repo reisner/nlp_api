@@ -1,4 +1,4 @@
-# README #
+# NLP Toolkit #
 
 Basic NLP analysis using a variety of libraries. Returns document sentiment, keywords, and entities. Can return sentiment per keyword and per entity.
 
