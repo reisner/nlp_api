@@ -21,7 +21,6 @@ class analyze_text(Resource):
         else:
             return {'error': 'key "text" not found in data'}
 
-#TODO: Dont use root:
 api.add_resource(analyze_text, '/analyze_text')
 
 if __name__ == '__main__':
