@@ -2,7 +2,7 @@ from textblob import TextBlob
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer #pip install vaderSentiment
 
 # Returns a hash, that differs based on the library, but is guaranteed to return
-# a value for the key "polarity". This ranges from -1 (negative) to 1 (positive).
+# a value for the key "sentiment.score". This ranges from -1 (negative) to 1 (positive).
 def get_sentiment(text, library = "textblob"):
     if library == 'textblob':
         return(get_textblob_sentiment(text))
@@ -16,7 +16,7 @@ def get_textblob_sentiment(text):
     # from textblob.sentiments import NaiveBayesAnalyzer
     # blob = TextBlob("I love this library", analyzer=NaiveBayesAnalyzer())
     sentiment = analysis.sentiment
-    return({ 'polarity': sentiment.polarity, 'subjectivity': sentiment.subjectivity })
+    return({ 'sentiment.score': sentiment.polarity, 'subjectivity': sentiment.subjectivity })
 
 # The compound score is computed by summing the valence scores of each word in
 # the lexicon, adjusted according to the rules, and then normalized to be between
@@ -24,6 +24,6 @@ def get_textblob_sentiment(text):
 def get_vader_sentiment(text):
     analyzer = SentimentIntensityAnalyzer()
     result = analyzer.polarity_scores(text)
-    result['polarity'] = result['compound']
+    result['sentiment.score'] = result['compound']
 
     return(result)

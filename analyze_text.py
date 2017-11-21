@@ -22,7 +22,7 @@ def analyze_text_block(text,
     if get_sentiment_per_topic:
         blob = TextBlob(text)
         for sentence in blob.sentences:
-            polarity = sentiment.get_sentiment(str(sentence), library = sentiment_library)['polarity']
+            polarity = sentiment.get_sentiment(str(sentence), library = sentiment_library)['sentiment.score']
             for keyword in keywords_res:
                 word = keyword['text']
                 if word.lower() in sentence.lower():
