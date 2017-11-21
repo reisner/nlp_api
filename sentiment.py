@@ -15,8 +15,8 @@ def get_textblob_sentiment(text):
     analysis = TextBlob(text)
     # from textblob.sentiments import NaiveBayesAnalyzer
     # blob = TextBlob("I love this library", analyzer=NaiveBayesAnalyzer())
-
-    return(analysis.sentiment)
+    sentiment = analysis.sentiment
+    return({ 'polarity': sentiment.polarity, 'subjectivity': sentiment.subjectivity })
 
 # The compound score is computed by summing the valence scores of each word in
 # the lexicon, adjusted according to the rules, and then normalized to be between

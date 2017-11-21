@@ -1,6 +1,8 @@
 # README #
 
-Basic NLP analysis using a variety of libraries. Returns document sentiment, keywords, and entities.
+Basic NLP analysis using a variety of libraries. Returns document sentiment, keywords, and entities. Can return sentiment per keyword and per entity.
+
+Also can be used to set up an API web server.
 
 ### Usage ###
 

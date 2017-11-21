@@ -21,6 +21,7 @@ class home(Resource):
         else:
             return {'error': 'key "text" not found in data'}
 
+#TODO: Dont use root:
 api.add_resource(home, '/')
 
 if __name__ == '__main__':
