@@ -1,8 +1,8 @@
 # NLP Toolkit #
 
-Basic NLP analysis using a variety of libraries. Returns document sentiment, keywords, and entities. Can return sentiment per keyword and per entity.
+Basic NLP API to a variety of libraries. Returns document sentiment, keywords, and entities. Can return sentiment per keyword and per entity.
 
-Also can be used to set up an API web server.
+Also can be used to set up your own text analysis API server.
 
 ### Usage ###
 
