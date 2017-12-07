@@ -1,6 +1,6 @@
-# NLP Toolkit #
+# NLP API #
 
-Basic NLP API to a variety of libraries. Returns document sentiment, keywords, and entities. Can return sentiment per keyword and per entity.
+This project provides an API to a variety of NLP libraries, in a standard format. Returns document sentiment, keywords, and entities. Can return sentiment per keyword and per entity.
 
 Also can be used to set up your own text analysis API server.
 
@@ -31,14 +31,13 @@ Some input:
 Using the code:
 
     import analyze_text as at
-    import pprint
     result = at.analyze_text_block(text)
+    import pprint
     pprint.pprint(result)
 
 You can also specify which libraries to use:
 
     result = at.analyze_text_block(text, sentiment_library = "vader", entity_library = "textblob")
-
 
 ### Flask REST Server ###
 
@@ -46,12 +45,12 @@ Run the flask server:
 
     nohup python rest_server.py >/dev/null 2>&1 &
 
-Query the server:
+Query the server (from python):
 
     from requests import put
     host_url = 'host.url.com/analyze_text'
     put(host_url, data={'text': text}).json()
 
-Or:
+Query the server (from the command line):
 
     curl -X PUT -d text="hello there i am some text to analyze in Canada. Boy oh boy am I angry." host.url.com/analyze_text
