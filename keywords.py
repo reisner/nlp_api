@@ -27,6 +27,6 @@ def get_textrank_keywords(text):
     keywords = textrank.extract_key_phrases(text)
 
     for word in keywords:
-        results.append({ 'text': word })
+        results.append({ 'text': word, 'score': 0 })
 
     return(results)
