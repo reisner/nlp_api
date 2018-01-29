@@ -1,7 +1,7 @@
 import RAKE #pip install python-rake
 import textrank #pip install git+git://github.com/davidadamojr/TextRank.git
 
-def get_keywords(text, library = "RAKE"):
+def get_keywords(text, library = "textrank"):
     if library == 'RAKE':
         return(get_rake_keywords(text))
     elif library == 'textrank':
