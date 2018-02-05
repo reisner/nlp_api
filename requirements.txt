@@ -1,0 +1,6 @@
+Flask==0.12.2
+Flask-RESTful==0.3.6
+spacy==2.0.7
+textblob==0.15.1
+python-rake==1.4.4
+vaderSentiment==2.5
