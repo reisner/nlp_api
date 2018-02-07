@@ -33,6 +33,17 @@ STOPWORDS = [
     'with',
     'the',
     "'s",
+    '/',
+    'do',
+    'so',
+    'you',
+    'say',
+    'thank',
+    'there',
+    'their',
+    'do',
+    'just',
+    'would',
     'and'
 ]
 
