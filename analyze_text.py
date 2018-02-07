@@ -16,6 +16,9 @@ def analyze_text_block(text,
                        sentiment_library = "textblob",
                        entity_library = "spacy",
                        get_sentiment_per_topic = True):
+    text = re.sub('\s+', ' ', text)
+    text = text.replace("\n", ' ')
+
     entities_res = entities.get_entities(text, library = entity_library)
     keywords_res = keywords.get_keywords(text)
     sentiment_res = sentiment.get_sentiment(text, library = sentiment_library)
@@ -30,8 +33,7 @@ def analyze_text_block(text,
 
             sentence_lemmas = lemmas.get_lemmas(sentence)
 
-            sentence = str(sentence).lower().replace("\n", ' ')
-            sentence = re.sub('\s+', ' ', sentence)
+            sentence = str(sentence).lower()
 
             for lemma in sentence_lemmas:
                 lemmatxt = lemma['text']
