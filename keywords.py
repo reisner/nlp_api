@@ -18,7 +18,7 @@ def get_rake_keywords(text, score_minimum = None):
     for row in keywords:
         score = row[1]
         if (score_minimum is None) or (score >= score_minimum):
-            results.append({ 'text': row[0], 'score': score })
+            results.append({ 'text': row[0].strip(), 'score': score })
 
     return(results)
 
@@ -27,6 +27,6 @@ def get_textrank_keywords(text):
     keywords = textrank.extract_key_phrases(text)
 
     for word in keywords:
-        results.append({ 'text': word, 'score': 0 })
+        results.append({ 'text': word.strip(), 'score': 0 })
 
     return(results)

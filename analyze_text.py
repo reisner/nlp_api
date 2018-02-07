@@ -3,6 +3,7 @@ import keywords
 import lemmas
 import numpy as np
 import pprint
+import re
 import sentiment
 from textblob import TextBlob
 
@@ -29,7 +30,9 @@ def analyze_text_block(text,
 
             sentence_lemmas = lemmas.get_lemmas(sentence)
 
-            sentence = sentence.lower().replace("\n", ' ')
+            sentence = str(sentence).lower().replace("\n", ' ')
+            sentence = re.sub('\s+', ' ', sentence)
+
             for lemma in sentence_lemmas:
                 lemmatxt = lemma['text']
                 if lemmatxt in lemmas_dict.keys():
