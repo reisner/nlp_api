@@ -26,7 +26,6 @@ def analyze_text_block(text,
             for keyword in keywords_res:
                 word = keyword['text']
                 if word.lower() in sentence.lower().replace("\n", ' '):
-                    print("FOUND:" + word)
                     if 'sentiment.score' not in keyword.keys():
                         keyword['sentiment.score'] = []
                     keyword['sentiment.score'].append(polarity)
