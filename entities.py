@@ -24,7 +24,7 @@ def get_spacy_entities(text):
     for entity in doc.ents:
         if entity.text.strip() != '':
             entities.append({
-                "text": entity.text,
+                "text": entity.text.strip(),
                 "label": entity.label_,
                 "start_char": entity.start_char,
                 "end_char": entity.end_char
@@ -41,7 +41,7 @@ def get_textblob_entities(text):
     blob = TextBlob(text, np_extractor=extractor)
     entities = []
     for entity in blob.noun_phrases:
-        entities.append({'text': entity})
+        entities.append({ 'text': entity.strip() })
     return(entities)
 
 
