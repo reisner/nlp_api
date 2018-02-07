@@ -44,6 +44,12 @@ STOPWORDS = [
     'do',
     'just',
     'would',
+    'can',
+    'should'
+    'could',
+    'can',
+    'them',
+    'need',
     'and'
 ]
 

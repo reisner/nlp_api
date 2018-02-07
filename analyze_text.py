@@ -55,10 +55,16 @@ def analyze_text_block(text,
                     entity['sentiment.score'].append(sentence_score)
 
         for keyword in keywords_res:
+            # WARNING: This is a hack. Happens when we have different libraries not agreeing on sentence boundaries!
+            if 'sentiment.score' not in keyword.keys(): keyword['sentiment.score'] = [sentiment_res['sentiment.score']]
+
             keyword['num.sentences'] = len(keyword['sentiment.score'])
             keyword['sentiment.score'] = np.mean(keyword['sentiment.score'])
 
         for entity in entities_res:
+            # WARNING: This is a hack. Happens when we have different libraries not agreeing on sentence boundaries!
+            if 'sentiment.score' not in entity.keys(): entity['sentiment.score'] = [sentiment_res['sentiment.score']]
+
             entity['num.sentences'] = len(entity['sentiment.score'])
             entity['sentiment.score'] = np.mean(entity['sentiment.score'])
 
