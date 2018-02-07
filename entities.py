@@ -41,7 +41,7 @@ def get_textblob_entities(text):
     blob = TextBlob(text, np_extractor=extractor)
     entities = []
     for entity in blob.noun_phrases:
-        entities.append({'text': entity})
+        entities.append({ 'text': entity })
     return(entities)
 
 
